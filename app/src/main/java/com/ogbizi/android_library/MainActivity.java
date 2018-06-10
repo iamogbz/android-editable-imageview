@@ -9,7 +9,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 
+import com.ogbizi.android_editable_textview.AsyncEditTextBehavior;
 import com.ogbizi.android_editable_textview.EditTextView;
+import com.ogbizi.android_editable_textview.PatternEditTextBehavior;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,34 +22,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final String link = "http://github.com/iamogbz";
-                Snackbar.make(view, "Checkout " + link + " for more",
-                              Snackbar.LENGTH_LONG)
-                        .setAction("Visit", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Intent browserIntent = new Intent(
-                                        Intent.ACTION_VIEW, Uri.parse(link));
-                                startActivity(browserIntent);
-                            }
-                        })
-                        .show();
-            }
-        });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        EditTextView textView1 = findViewById(R.id.editTextView1);
+        textView1.setBehavior(new PatternEditTextBehavior("%s (format)"));
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        */
+        EditTextView textView2 = findViewById(R.id.editTextView2);
+        textView2.setBehavior(new AsyncEditTextBehavior());
     }
 
     @Override

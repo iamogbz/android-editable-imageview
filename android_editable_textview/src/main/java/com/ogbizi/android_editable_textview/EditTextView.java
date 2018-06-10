@@ -33,33 +33,17 @@ public class EditTextView extends AppCompatAutoCompleteTextView {
 
     public EditTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context, attrs);
+        init();
     }
 
     /**
      * Initialize view, debug logging and listeners
      */
-    public void init(Context context, AttributeSet attrs) {
+    public void init() {
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());
         }
-        TypedArray a = context.getTheme().obtainStyledAttributes(attrs,
-                                                                 R.styleable.EditTextView,
-                                                                 0, 0);
-        try {
-            String pattern = a.getString(
-                    R.styleable.EditTextView_formatPattern);
-            boolean usePattern = pattern != null && a.getBoolean(
-                    R.styleable.EditTextView_usePattern, false);
-            if (usePattern) {
-                setBehavior(new PatternEditTextBehavior(pattern));
-            }
-            initListeners();
-        } catch (Exception e) {
-            Timber.e(e);
-        } finally {
-            a.recycle();
-        }
+        initListeners();
     }
 
     /**
