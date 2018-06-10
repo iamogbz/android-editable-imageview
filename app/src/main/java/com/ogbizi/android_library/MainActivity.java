@@ -9,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 
-import com.ogbizi.editable_textview.EditTextView;
+import com.ogbizi.android_editable_textview.EditTextView;
 
 public class MainActivity extends AppCompatActivity {
 

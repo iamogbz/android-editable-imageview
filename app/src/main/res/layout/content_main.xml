@@ -13,14 +13,14 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.ogbizi.editable_textview.EditTextView
+        <com.ogbizi.android_editable_textview.EditTextView
             android:id="@+id/editTextView1"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="48dp"
             app:formatPattern="###-###-####"
             app:usePattern="true" />
-        <com.ogbizi.editable_textview.EditTextView
+        <com.ogbizi.android_editable_textview.EditTextView
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="48dp"

@@ -1,4 +1,4 @@
-package com.ogbizi.editable_textview;
+package com.ogbizi.android_editable_textview;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

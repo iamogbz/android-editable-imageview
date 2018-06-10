@@ -1,1 +1,1 @@
-include ':app', ':editable_textview'
+include ':app', ':android_editable_textview'
