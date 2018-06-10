@@ -85,7 +85,7 @@ public class EditTextView extends AppCompatAutoCompleteTextView {
             public void afterTextChanged(Editable s) {
                 Timber.i("after text change: %s", s);
                 if (mFocused) setValue(s.toString());
-                setDisplayText(mBehavior.onTextChanged(s));
+                if (mBehavior != null) setDisplayText(mBehavior.onTextChanged(s));
             }
         });
     }
@@ -93,16 +93,18 @@ public class EditTextView extends AppCompatAutoCompleteTextView {
     @Override
     protected void onFocusChanged(boolean focused, int direction, Rect rect) {
         mFocused = focused;
-        String displayText;
-        String currValue = getValue();
-        String currText = getText().toString();
-        Timber.d("focus: %s %s %s", focused, currValue, currText);
-        if (focused) {
-            displayText = mBehavior.onFocusIn(direction, currValue, currText);
-        } else {
-            displayText = mBehavior.onFocusOut(direction, currValue, currText);
+        if(mBehavior != null) {
+            String displayText;
+            String currValue = getValue();
+            String currText = getText().toString();
+            Timber.d("focus: %s %s %s", focused, currValue, currText);
+            if (focused) {
+                displayText = mBehavior.onFocusIn(direction, currValue, currText);
+            } else {
+                displayText = mBehavior.onFocusOut(direction, currValue, currText);
+            }
+            setDisplayText(displayText);
         }
-        setDisplayText(displayText);
         super.onFocusChanged(focused, direction, rect);
     }
 
