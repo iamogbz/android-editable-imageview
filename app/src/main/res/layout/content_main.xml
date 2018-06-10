@@ -17,15 +17,12 @@
             android:id="@+id/editTextView1"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:layout_height="48dp"
-            app:formatPattern="###-###-####"
-            app:usePattern="true" />
+            android:layout_height="48dp" />
         <com.ogbizi.android_editable_textview.EditTextView
+            android:id="@+id/editTextView2"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:layout_height="48dp"
-            app:formatPattern="####-######"
-            app:usePattern="true" />
+            android:layout_height="48dp" />
         <Button
             android:text="@string/btn_animate_color"
             android:id="@+id/animateColorBtn"

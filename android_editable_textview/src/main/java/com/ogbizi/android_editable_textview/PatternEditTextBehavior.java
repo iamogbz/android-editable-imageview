@@ -5,21 +5,17 @@ import android.text.Editable;
 public class PatternEditTextBehavior implements EditTextView.Behavior {
 
     private String mPattern;
-    private EditTextView mView;
 
     public PatternEditTextBehavior(String pattern) {
         mPattern = pattern;
     }
 
     private String format(String text) {
-        // TODO
         return String.format(mPattern, text);
     }
 
     @Override
-    public void onAttach(EditTextView view) {
-        mView = view;
-    }
+    public void onAttach(EditTextView view) {}
 
     @Override
     public String onFocusIn(int direction, String value, String text) {
