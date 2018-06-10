@@ -158,7 +158,7 @@ public class EditTextView extends AppCompatAutoCompleteTextView {
     public Animator animateTextColor(long duration, Integer ...colors) {
         ObjectAnimator animator = ObjectAnimator
                 .ofObject(this, "textColor",
-                          new ArgbEvaluator(), (Object) colors);
+                          new ArgbEvaluator(), (Object[]) colors);
         animator.setDuration(duration);
         animator.start();
         return animator;
