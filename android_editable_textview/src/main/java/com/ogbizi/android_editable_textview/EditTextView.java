@@ -136,7 +136,7 @@ public class EditTextView extends AppCompatAutoCompleteTextView {
         final int animateHalfDuration = 48;
         final Integer hiddenTextColor = Color.argb(0, 0, 0, 0);
         final Integer currentTextColor = getCurrentTextColor();
-        if (text != null) {
+        if (text != null && !text.equals(getText().toString())) {
             Animator animator = animateTextColor(
                     animateHalfDuration, currentTextColor, hiddenTextColor);
             animator.addListener(new BaseAnimatorListener() {
